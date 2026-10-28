@@ -1057,19 +1057,11 @@ const ReduccionSimulator = (function() {
         canvas.addEventListener('touchmove', function(e) { e.preventDefault(); handleMove(e); }, {passive:false});
         canvas.addEventListener('touchend', handleUp);
 
-        // Zoom con rueda del mouse
-        canvas.addEventListener('wheel', function(e) {
-            e.preventDefault();
-            var delta = e.deltaY > 0 ? 0.9 : 1.1;
-            setZoom(zoomLevel * delta);
-        }, { passive: false });
+        // Zoom solo con botones + y - (scroll deshabilitado)
+        canvas.addEventListener('wheel', function(e) { e.preventDefault(); }, { passive: false });
 
-        // Cursor del canvas según zoom
-        canvas.style.cursor = zoomLevel !== 1 ? 'zoom-out' : 'zoom-in';
-        // Actualizar cursor dinamicamente
-        canvas.addEventListener('mouseenter', function() {
-            canvas.style.cursor = Math.abs(zoomLevel - 1) < 0.01 ? 'zoom-in' : 'zoom-out';
-        });
+        // Cursor del canvas
+        canvas.style.cursor = 'default';
     }
 
     return {
