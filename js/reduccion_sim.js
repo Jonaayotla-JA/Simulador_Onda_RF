@@ -34,7 +34,7 @@ const ReduccionSimulator = (function() {
     var cashierZone = { x: 620, y: 380, width: 120, height: 80 };
 
     // Atenuaciones
-    var WALL_ATTEN = 16;      // Concreto
+    var WALL_ATTEN = 10;      // Concreto
     var WINDOW_ATTEN = 6.4;     // Vidrio
     var DOOR_ATTEN = 0;       // Puerta abierta (sin material)
     var CASHIER_ATTEN = 7;   // Área de cajas (mobiliario + equipos)
