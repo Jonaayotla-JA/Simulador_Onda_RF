@@ -1167,7 +1167,7 @@
         <div class="content-card" style="border-left: 4px solid var(--getin-green);">
             <h3 style="font-size: 16px; margin-bottom: 6px; color: var(--getin-green-dark); font-weight: 700;">¿Qué muestra esta simulación?</h3>
             <p style="font-size: 14px; color: var(--text); line-height: 1.55;">
-                Esta simulación muestra dos tiendas pegadas separadas por un muro de concreto de 15cm. <strong>Todas las paredes son de concreto</strong> (20 dBm atenuación). Cada tienda tiene <strong>2 ventanas de vidrio</strong> (8 dBm atenuación) que dejan pasar más señal que el concreto. La antena está en la Tienda A (izquierda). Con una calibración correcta, las personas de la Tienda B no se cuentan como visitas. Si el umbral es muy bajo, los dispositivos de la tienda vecina pueden registrarse como visitas falsas (contaminación cruzada) a través de las ventanas.
+                Esta simulación muestra dos tiendas pegadas separadas por un muro de concreto de 15cm. <strong>Todas las paredes son de concreto</strong> (16 dBm atenuación). Cada tienda tiene <strong>2 ventanas de vidrio</strong> (6.4 dBm atenuación) que dejan pasar más señal que el concreto. La antena está en la Tienda A (izquierda). Con una calibración correcta, las personas de la Tienda B no se cuentan como visitas. Si el umbral es muy bajo, los dispositivos de la tienda vecina pueden registrarse como visitas falsas (contaminación cruzada) a través de las ventanas.
             </p>
         </div>
 
@@ -1232,11 +1232,11 @@
                     </div>
                     <div class="rf-legend-item">
                         <div class="rf-legend-color" style="background: #8B7355; border: 1px solid #5D4E37;"></div>
-                        <span>🟫 Pared de Concreto (20 dBm atenuación)</span>
+                        <span>🟫 Pared de Concreto (16 dBm atenuación)</span>
                     </div>
                     <div class="rf-legend-item">
                         <div class="rf-legend-color" style="background: rgba(135, 206, 235, 0.6); border: 1px solid #5DADE2;"></div>
-                        <span>🪟 Ventana de Vidrio (8 dBm atenuación)</span>
+                        <span>🪟 Ventana de Vidrio (6.4 dBm atenuación)</span>
                     </div>
                 </div>
             </div>
@@ -1266,7 +1266,7 @@
 
                     <div class="info-box">
                         <strong>Contaminación Cruzada:</strong>
-                        El muro de concreto atenúa ~20 dBm a TODAS las señales (raw y visitas). Bajar el umbral excesivamente puede hacer que dispositivos de la Tienda B aparezcan como visitas en la Tienda A.
+                        El muro de concreto atenúa ~16 dBm a TODAS las señales (raw y visitas). Bajar el umbral excesivamente puede hacer que dispositivos de la Tienda B aparezcan como visitas en la Tienda A.
                     </div>
                 </div>
 
@@ -1317,7 +1317,7 @@
                         ¿Cómo funciona el muro?
                     </h3>
                     <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.5;">
-                        El muro de concreto de 15cm entre ambas tiendas y las paredes exteriores de concreto aportan <strong>20 dBm de atenuación</strong> a todas las señales que las atraviesan. Las <strong>ventanas de vidrio</strong> (2 por tienda) atenúan solo <strong>8 dBm</strong>, permitiendo que parte de la señal escape o entre. Esto afecta tanto la visión natural (raw) como la calibración de visitas.
+                        El muro de concreto de 15cm entre ambas tiendas y las paredes exteriores de concreto aportan <strong>16 dBm de atenuación</strong> a todas las señales que las atraviesan. Las <strong>ventanas de vidrio</strong> (2 por tienda) atenúan solo <strong>6.4 dBm</strong>, permitiendo que parte de la señal escape o entre. Esto afecta tanto la visión natural (raw) como la calibración de visitas.
                     </p>
                 </div>
             </div>
@@ -1341,7 +1341,7 @@
         <div class="content-card" style="border-left: 4px solid var(--getin-green); margin-bottom: 20px;">
             <h3 style="font-size: 16px; margin-bottom: 6px; color: var(--getin-green-dark); font-weight: 700;">¿Cómo funciona este simulador?</h3>
             <p style="font-size: 14px; color: var(--text); line-height: 1.55;">
-                La antena emite 3 ondas: <strong style="color:#2980B9;">Raw</strong> (señal natural, 0 a -100 dBm), <strong style="color:#E74C3C;">Paseantes</strong> (rojo, calibrable) y <strong style="color:#2CAD78;">Visitas</strong> (verde, calibrable, siempre ≤ paseantes). <strong>Todas las ondas se atenúan</strong> por personas (2.8 dB), anaqueles (5 dB), paredes de concreto (20 dB), ventanas de vidrio (8 dB), lluvia y temperatura.
+                La antena emite 3 ondas: <strong style="color:#2980B9;">Raw</strong> (señal natural, 0 a -100 dBm), <strong style="color:#E74C3C;">Paseantes</strong> (rojo, calibrable) y <strong style="color:#2CAD78;">Visitas</strong> (verde, calibrable, siempre ≤ paseantes). <strong>Todas las ondas se atenúan</strong> por personas (2.24 dB), anaqueles (4 dB), paredes de concreto (16 dB), ventanas de vidrio (6.4 dB), lluvia y temperatura.
             </p>
         </div>
 
@@ -1401,8 +1401,8 @@
                     <div class="rf-legend-item"><div class="rf-legend-color" style="background: rgba(41,128,185,0.3); border: 1px dashed #2980B9;"></div><span>Raw (0 a -100 dBm)</span></div>
                     <div class="rf-legend-item"><div class="rf-legend-color" style="background: rgba(231,76,60,0.3); border: 1px dashed #E74C3C;"></div><span>Paseantes (rojo)</span></div>
                     <div class="rf-legend-item"><div class="rf-legend-color" style="background: rgba(44,173,120,0.3); border: 1px dashed #2CAD78;"></div><span>Visitas (verde)</span></div>
-                    <div class="rf-legend-item"><div class="rf-legend-color" style="background: #8B7355; border: 1px solid #5D4E37;"></div><span>Concreto (20 dB)</span></div>
-                    <div class="rf-legend-item"><div class="rf-legend-color" style="background: rgba(135,206,235,0.6); border: 1px solid #5DADE2;"></div><span>Vidrio (8 dB)</span></div>
+                    <div class="rf-legend-item"><div class="rf-legend-color" style="background: #8B7355; border: 1px solid #5D4E37;"></div><span>Concreto (16 dB)</span></div>
+                    <div class="rf-legend-item"><div class="rf-legend-color" style="background: rgba(135,206,235,0.6); border: 1px solid #5DADE2;"></div><span>Vidrio (6.4 dB)</span></div>
                     <div class="rf-legend-item"><div class="rf-legend-color" style="background: #9B59B6;"></div><span>Antena</span></div>
                 </div>
             </div>
@@ -1434,8 +1434,8 @@
                         <div class="control-label"><span>Lluvia</span></div>
                         <select id="red-lluvia" onchange="ReduccionSimulator.updateClima()" style="width: 100%; padding: 6px 8px; font-size: 0.85rem; border: 1px solid var(--border); border-radius: 4px;">
                             <option value="0" selected>Sin lluvia (0 dB)</option>
-                            <option value="4">Lluvia media (+4 dB)</option>
-                            <option value="8">Lluvia fuerte (+8 dB)</option>
+                            <option value="3.2">Lluvia media (+3.2 dB)</option>
+                            <option value="6.4">Lluvia fuerte (+6.4 dB)</option>
                         </select>
                     </div>
                     <div class="control-group">
@@ -1463,7 +1463,7 @@
                 <div class="rf-card">
                     <h3>ℹ️ Info</h3>
                     <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.5;">
-                        Escala: 1 px = 0.05 m. Tienda 100 m² (10x10m). Raw tipo router (~15m). Cada persona atenúa <strong>2.8 dB</strong>, cada anaquel <strong>5 dB</strong>. Paredes de concreto <strong>20 dB</strong>, ventanas <strong>8 dB</strong>. Lluvia suma atenuación global. Antena movible: clic en "Mover Antena" y arrastrá.
+                        Escala: 1 px = 0.05 m. Tienda 100 m² (10x10m). Raw tipo router (~15m). Cada persona atenúa <strong>2.24 dB</strong>, cada anaquel <strong>4 dB</strong>. Paredes de concreto <strong>16 dB</strong>, ventanas <strong>6.4 dB</strong>. Lluvia suma atenuación global. Antena movible: clic en "Mover Antena" y arrastrá.
                     </p>
                 </div>
             </div>
