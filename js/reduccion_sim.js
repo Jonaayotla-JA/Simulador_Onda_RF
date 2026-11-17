@@ -173,14 +173,14 @@ const ReduccionSimulator = (function() {
 
     function updateClima() {
         var sel = document.getElementById('red-lluvia');
-        if (sel) lluviaAtten = parseInt(sel.value);
+        if (sel) lluviaAtten = parseFloat(sel.value);
     }
 
     function updateTemperatura(val) {
         var temp = parseInt(val);
         var el = document.getElementById('red-temp-val');
         if (el) el.innerText = temp + '\u00b0C';
-        tempAtten = (temp > 40 || temp < 0) ? 1 : 0;
+        tempAtten = (temp > 40 || temp < 0) ? 0.8 : 0;
     }
 
     function clearElements() { people = []; shelves = []; }
@@ -246,11 +246,11 @@ const ReduccionSimulator = (function() {
         var waterAtten = 0;
         people.forEach(function(p) {
             var d = pointToSegmentDistance(p, ant, tgt);
-            if (d < 20) waterAtten += 2.8;
+            if (d < 20) waterAtten += 2.24;
         });
         var shelfAtten = 0;
         shelves.forEach(function(s) {
-            if (lineIntersectsRect(ant, tgt, s)) shelfAtten += 5.0;
+            if (lineIntersectsRect(ant, tgt, s)) shelfAtten += 4.0;
         });
         var wallAtten = 0;
         var inAnt = isInStore(ant.x, ant.y);
@@ -267,12 +267,12 @@ const ReduccionSimulator = (function() {
 
     // Cálculo de señal con atenuaciones completas:
     // - Path loss (distancia)
-    // - Personas (cuerpos de agua: 2.8 dB c/u)
-    // - Anaqueles (5.0 dB c/u)
+    // - Personas (cuerpos de agua: 2.24 dB c/u)
+    // - Anaqueles (4.0 dB c/u)
     // - Paredes de concreto (20 dB)
     // - Ventanas de vidrio (8 dB)
-    // - Lluvia (0/4/8 dB global)
-    // - Temperatura extrema (1 dB drift)
+    // - Lluvia (0/3.2/6.4 dB global)
+    // - Temperatura extrema (0.8 dB drift)
     function calculateSignalAt(x, y) {
         var dist = Math.hypot(x - antenna.x, y - antenna.y);
         if (dist < 5) return -20;
@@ -291,13 +291,13 @@ const ReduccionSimulator = (function() {
         var tgt = { x: x, y: y };
         people.forEach(function(p) {
             var d = pointToSegmentDistance(p, ant, tgt);
-            if (d < 20) waterAtten += 2.8;
+            if (d < 20) waterAtten += 2.24;
         });
 
         // Atenuación por anaqueles
         var shelfAtten = 0;
         shelves.forEach(function(s) {
-            if (lineIntersectsRect(ant, tgt, s)) shelfAtten += 5.0;
+            if (lineIntersectsRect(ant, tgt, s)) shelfAtten += 4.0;
         });
 
         // Atenuación por paredes/ventanas (solo si la señal cruza la pared)

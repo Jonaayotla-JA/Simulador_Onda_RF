@@ -15,8 +15,8 @@ const VecinaSimulator = (function() {
     var wallX1 = 460, wallX2 = 475; // Muro de concreto de 15cm (~15px)
     var cashierZoneA = { x: 320, y: 380, width: 120, height: 80 };
     var cashierZoneB = { x: 540, y: 380, width: 120, height: 80 };
-    var WALL_ATTEN_DBM = 20;      // Atenuación muro de concreto
-    var WINDOW_ATTEN_DBM = 8;     // Atenuación ventana de vidrio (menor que concreto)
+    var WALL_ATTEN_DBM = 16;      // Atenuación muro de concreto
+    var WINDOW_ATTEN_DBM = 6.4;     // Atenuación ventana de vidrio (menor que concreto)
     var RAW_DBM = -100;
 
     // Ventanas: cada una es un segmento en una pared. La señal que pasa por una ventana se atenúa menos.
@@ -150,7 +150,7 @@ const VecinaSimulator = (function() {
         var crossesDivisor = lineIntersectsWall(point);
 
         // --- Caso 1: señal cruza el muro divisorio (de A a B o de B a A) ---
-        // Solo se aplica UNA vez la atenuación del muro (20dB concreto o ventana si cae en una)
+        // Solo se aplica UNA vez la atenuación del muro (16dB concreto o ventana si cae en una)
         if (crossesDivisor) {
             totalAtten += WALL_ATTEN_DBM;
         }
@@ -261,12 +261,12 @@ const VecinaSimulator = (function() {
         let waterAtten = 0;
         people.forEach(p => {
             const distToLine = pointToSegmentDistance(p, antenna, {x, y});
-            if (distToLine < 20) waterAtten += 2.8;
+            if (distToLine < 20) waterAtten += 2.24;
         });
 
         let shelfAtten = 0;
         shelves.forEach(s => {
-            if (lineIntersectsRect(antenna, {x, y}, s)) shelfAtten += 5.0;
+            if (lineIntersectsRect(antenna, {x, y}, s)) shelfAtten += 4.0;
         });
 
         let wallAtten = calculateWallAtten({x, y});

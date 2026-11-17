@@ -148,12 +148,12 @@ const RFSimulator = (function() {
         let waterAtten = 0;
         people.forEach(p => {
             const distToLine = pointToSegmentDistance(p, antenna, {x, y});
-            if (distToLine < 20) waterAtten += 2.8;
+            if (distToLine < 20) waterAtten += 2.24;
         });
 
         let shelfAtten = 0;
         shelves.forEach(s => {
-            if (lineIntersectsRect(antenna, {x, y}, s)) shelfAtten += 5.0;
+            if (lineIntersectsRect(antenna, {x, y}, s)) shelfAtten += 4.0;
         });
 
         let rxSignal = -pathLoss - waterAtten - shelfAtten;
@@ -179,13 +179,13 @@ const RFSimulator = (function() {
         let waterAtten = 0;
         people.forEach(p => {
             const distToLine = pointToSegmentDistance(p, antenna, {x, y});
-            if (distToLine < 20) waterAtten += 2.8;
+            if (distToLine < 20) waterAtten += 2.24;
         });
 
         // Atenuación por anaqueles
         let shelfAtten = 0;
         shelves.forEach(s => {
-            if (lineIntersectsRect(antenna, {x, y}, s)) shelfAtten += 5.0;
+            if (lineIntersectsRect(antenna, {x, y}, s)) shelfAtten += 4.0;
         });
 
         // Atenuación por clima (lluvia + temperatura)
