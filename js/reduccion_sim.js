@@ -246,7 +246,7 @@ const ReduccionSimulator = (function() {
         var waterAtten = 0;
         people.forEach(function(p) {
             var d = pointToSegmentDistance(p, ant, tgt);
-            if (d < 20) waterAtten += 2.24;
+            if (d < 20) waterAtten += 2.8;
         });
         var shelfAtten = 0;
         shelves.forEach(function(s) {
@@ -267,7 +267,7 @@ const ReduccionSimulator = (function() {
 
     // Cálculo de señal con atenuaciones completas:
     // - Path loss (distancia)
-    // - Personas (cuerpos de agua: 2.24 dB c/u)
+    // - Personas (cuerpos de agua: 2.8 dB c/u)
     // - Anaqueles (4.0 dB c/u)
     // - Paredes de concreto (20 dB)
     // - Ventanas de vidrio (8 dB)
@@ -291,7 +291,7 @@ const ReduccionSimulator = (function() {
         var tgt = { x: x, y: y };
         people.forEach(function(p) {
             var d = pointToSegmentDistance(p, ant, tgt);
-            if (d < 20) waterAtten += 2.24;
+            if (d < 20) waterAtten += 2.8;
         });
 
         // Atenuación por anaqueles

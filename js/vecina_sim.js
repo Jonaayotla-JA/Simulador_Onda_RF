@@ -261,7 +261,7 @@ const VecinaSimulator = (function() {
         let waterAtten = 0;
         people.forEach(p => {
             const distToLine = pointToSegmentDistance(p, antenna, {x, y});
-            if (distToLine < 20) waterAtten += 2.24;
+            if (distToLine < 20) waterAtten += 2.8;
         });
 
         let shelfAtten = 0;
